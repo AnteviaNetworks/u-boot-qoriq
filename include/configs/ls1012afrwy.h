@@ -9,6 +9,8 @@
 
 #include "ls1012a_common.h"
 
+#define CONFIG_RAMBOOT			y
+
 /* Board Rev*/
 #define BOARD_REV_A_B			0x0
 #define BOARD_REV_C			0x00080000
