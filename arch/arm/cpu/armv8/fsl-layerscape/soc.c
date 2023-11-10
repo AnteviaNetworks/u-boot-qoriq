@@ -150,6 +150,7 @@ static void erratum_a008997(void)
 
 static void erratum_a009007(void)
 {
+#ifndef CONFIG_RAMBOOT
 #if defined(CONFIG_ARCH_LS1043A) || defined(CONFIG_ARCH_LS1046A) || \
 	defined(CONFIG_ARCH_LS1012A)
 	void __iomem *usb_phy = (void __iomem *)SCFG_USB_PHY1;
@@ -168,6 +169,7 @@ static void erratum_a009007(void)
 	PROGRAM_USB_PHY_RX_OVRD_IN_HI(dcsr + DCSR_USB_PHY1);
 	PROGRAM_USB_PHY_RX_OVRD_IN_HI(dcsr + DCSR_USB_PHY2);
 #endif /* CONFIG_SYS_FSL_ERRATUM_A009007 */
+#endif
 }
 
 #if defined(CONFIG_FSL_LSCH3)
